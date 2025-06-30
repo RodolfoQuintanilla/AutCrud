@@ -1,0 +1,8 @@
+@{
+    ViewData["Title"] = "Página Protegida";
+}
+
+<h2>Bienvenido, @User.Identity.Name</h2>
+<p>Esta es una página protegida. Solo usuarios autenticados pueden verla.</p>
+
+<a asp-controller="Cuenta" asp-action="Logout" class="btn btn-danger">Cerrar sesión</a>

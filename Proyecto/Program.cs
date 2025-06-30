@@ -29,14 +29,14 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
-
-app.UseAuthorization();
+app.MapDefaultControllerRoute();
 
 app.MapStaticAssets();
 
-app.UseAuthentication(); // Obligatorio
-app.UseAuthorization();  // Obligatorio
+app.UseAuthentication();  // ✅ debe ir antes de Authorization
+app.UseAuthorization();   // ✅ obligatorio para que funcione [Authorize]
 
 
 app.MapControllerRoute(
